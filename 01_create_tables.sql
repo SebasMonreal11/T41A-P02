@@ -1,5 +1,5 @@
--- Tabla maestro
-CREATE TABLE maestro (
+-- Tabla maestros
+CREATE TABLE maestros (
     id_maestro INT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
@@ -17,7 +17,7 @@ CREATE TABLE grupos (
     id_maestro INT NOT NULL,
     PRIMARY KEY (periodo, seccion),
     CONSTRAINT fk_grupo_maestro FOREIGN KEY (id_maestro)
-        REFERENCES maestro(id_maestro)
+        REFERENCES maestros(id_maestro)
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 );
@@ -54,4 +54,3 @@ CREATE TABLE asistencia (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
-
